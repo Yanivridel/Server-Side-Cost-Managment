@@ -1,0 +1,35 @@
+http://localhost:3000
+
+testing getting the about
+-------------------------
+url=http://localhost:3000/api/about/
+data.status_code=200
+b'{"developers":[{"first_name":"Tomas","last_name":"Shahwan"},{"first_name":"Yaniv","last_name":"Ridel"}]}'
+data.text={"developers":[{"first_name":"Tomas","last_name":"Shahwan"},{"first_name":"Yaniv","last_name":"Ridel"}]}
+{'developers': [{'first_name': 'Tomas', 'last_name': 'Shahwan'}, {'first_name': 'Yaniv', 'last_name': 'Ridel'}]}
+
+
+testing getting the report - 1
+------------------------------
+url=http://localhost:3000/api/report/?id=123123&year=2025&month=2
+data.status_code=500
+b'{"status":"Error","message":"An unexpected error occurred","error":"input must be a 24 character hex string, 12 byte Uint8Array, or an integer"}'
+data.text={"status":"Error","message":"An unexpected error occurred","error":"input must be a 24 character hex string, 12 byte Uint8Array, or an integer"}
+
+
+
+testing adding cost item
+----------------------------------
+url=http://localhost:3000/api/add/
+data.status_code=500
+b'{"status":"Error","message":"An unexpected error occurred","error":"Cast to ObjectId failed for value \\"123123\\" (type number) at path \\"_id\\" for model \\"User\\""}'
+
+
+testing getting the report - 2
+------------------------------
+url=http://localhost:3000/api/report/?id=123123&year=2025&month=2
+data.status_code=500
+b'{"status":"Error","message":"An unexpected error occurred","error":"input must be a 24 character hex string, 12 byte Uint8Array, or an integer"}'
+data.text={"status":"Error","message":"An unexpected error occurred","error":"input must be a 24 character hex string, 12 byte Uint8Array, or an integer"}
+
+
